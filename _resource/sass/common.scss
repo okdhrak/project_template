@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/* ********************************************************************-
+Date:2017-01-10
+CSS Document:プロジェクトのテンプレート 基本スタイルシート
+
+ - ******************************************************************** */
+
+@import "compass/reset";
+
+@import "settings";
+@import "functions";
+
+@font-face {
+	font-family: 'LogoTypeM';
+	src: url('../font/logotypejp_m.woff2') format("woff2"), url('../font/logotypejp_m.woff') format("woff");
+}
+@font-face {
+	font-family: 'KozGothicProW3';
+	src: url('../font/KozGothicProW3.woff2') format("woff2"), url('../font/KozGothicProW3.woff') format("woff");
+}
+
+/* common style */
+* {}
+
+html {}
+
+body {
+	font-family: 'KozGothicProW3', 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro';
+}
+
+/* margin, padding */
+@if $margin-class {
+	@for $i from 0 through $end-val {
+		.mt#{$i * 5} {
+			margin-top: 5px * $i !important;
+		}
+		.mb#{$i * 5} {
+			margin-bottom: 5px * $i !important;
+		}
+		@if $padding-class {
+			.pt#{$i * 5} {
+				padding-top: 5px * $i !important;
+			}
+			.pb#{$i * 5} {
+				padding-bottom: 5px * $i !important;
+			}
+		}
+	}
+}
